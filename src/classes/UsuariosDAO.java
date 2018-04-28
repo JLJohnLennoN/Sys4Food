@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,12 +25,15 @@ public class UsuariosDAO {
     }
     
     public boolean save (Usuarios usuarios){
-        String sql = "INSERT INTO usuarios (nome) VALUES(?)";
+        String sql = "INSERT INTO usuarios (nome, senha, tipo) VALUES(?,?,?)";
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, usuarios.getNome());
+            stmt.setString(2, usuarios.getSenha());
+            stmt.setString(3, usuarios.getTipo());
             stmt.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!");
             return true;
                     } catch (SQLException ex) {
             System.err.println("Erro: "+ex);
@@ -38,8 +42,10 @@ public class UsuariosDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
-    public List<Usuarios> findAll(){
-        String sql = "SELECT * FROM usuarios";
+    
+    
+    public Usuarios buscaUsuarios (Usuarios usuarios){
+        String sql = "SELECT * FROM usuarios WHERE nome like'%"+usuarios.getPesquisa()+"%'";
         PreparedStatement stmt = null;
         ResultSet rs = null;
         List<Usuarios> usuario = new ArrayList<>();
@@ -49,31 +55,39 @@ public class UsuariosDAO {
               rs =  stmt.executeQuery();
               
               while(rs.next()){
-                  Usuarios usuarios = new Usuarios();
+                  //Usuarios usuarios = new Usuarios();
+                  usuarios.setMatricula(rs.getInt("matricula"));
                   usuarios.setNome(rs.getString("nome"));
+                  usuarios.setTipo(rs.getString("tipo"));
+                  usuarios.setSenha(rs.getString("senha"));
                   usuario.add(usuarios);
               }
         }catch (SQLException ex){
-            System.err.println("Erro: "+ex);
+            System.err.println("Erro: Usuário não cadastrado!"+ex);
         }finally{
-            ConnectionFactory.closeConnection(con, stmt, rs);
+            //ConnectionFactory.closeConnection(con, stmt, rs);
         }
-        return usuario;
+        
+        return usuarios;
+        
     }
-        public boolean update (Usuarios usuarios){
-        String sql = "UPDATE usuarios SET nome = ? WHERE matricula = ?";
+    public boolean update (Usuarios usuarios){
+        String sql = "UPDATE usuarios SET nome=?, senha=?, tipo = ? WHERE matricula = ?";
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement(sql);
             stmt.setString(1, usuarios.getNome());
-            stmt.setInt(2, usuarios.getMatricula());
+            stmt.setString(2, usuarios.getSenha());
+            stmt.setString(3, usuarios.getTipo());
+            stmt.setInt(4, usuarios.getMatricula());
             stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Usuário alterado com sucesso! ");
             return true;
                     } catch (SQLException ex) {
             System.err.println("Erro: "+ex);
             return false;
         }finally{
-            ConnectionFactory.closeConnection(con, stmt);
+           // ConnectionFactory.closeConnection(con, stmt);
         }
     }
         public boolean delete (Usuarios usuarios){
@@ -91,4 +105,6 @@ public class UsuariosDAO {
             ConnectionFactory.closeConnection(con, stmt);
         }
     }
+        
+        
 }

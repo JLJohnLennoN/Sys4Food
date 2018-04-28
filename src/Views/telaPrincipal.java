@@ -324,6 +324,11 @@ int a=0;
 
         sMenuCadastroUsuario.setText("Cadastrar Usuario");
         sMenuCadastroUsuario.setPreferredSize(new java.awt.Dimension(140, 60));
+        sMenuCadastroUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sMenuCadastroUsuarioActionPerformed(evt);
+            }
+        });
         menuCadastro.add(sMenuCadastroUsuario);
 
         sMenuCadastrarMesa.setText("Cadastrar Mesa");
@@ -684,6 +689,11 @@ int a=0;
         opcoes.setVisible(true);
         bt30.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt30ActionPerformed
+
+    private void sMenuCadastroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sMenuCadastroUsuarioActionPerformed
+       TelaUsuarios telaUsu = new TelaUsuarios();
+       telaUsu.setVisible(true);
+    }//GEN-LAST:event_sMenuCadastroUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

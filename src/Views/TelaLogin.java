@@ -5,17 +5,14 @@
  */
 package Views;
 
-import javax.swing.JOptionPane;
+import classes.ConnectionFactory;
 
 /**
  *
  * @author JohnLennoN
  */
 public class TelaLogin extends javax.swing.JFrame {
-
-    /**
-     * Creates new form login
-     */
+    ConnectionFactory con = new ConnectionFactory();
     public TelaLogin() {
         initComponents();
     }
@@ -130,20 +127,15 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMatActionPerformed
 
     private void btEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntrarActionPerformed
-        // TODO add your handling code here:
-        
-       /* if(txtMat.getText().equals("12345")&& txtSenha.getText().equals("12345")){
-            JOptionPane.showMessageDialog(null, "Login efetuado com Sucesso!");*/
             
             telaPrincipal principal = new telaPrincipal();
             principal.setVisible(true);
             dispose();
             
-        //}
-        //else{
+
      
           //JOptionPane.showMessageDialog(null, "Falha!");        
-     //   }
+
     }//GEN-LAST:event_btEntrarActionPerformed
 
     private void btFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFecharActionPerformed
