@@ -322,7 +322,7 @@ int a=0;
         menuCadastro.setText("Cadastro");
         menuCadastro.setPreferredSize(new java.awt.Dimension(90, 60));
 
-        sMenuCadastroUsuario.setText("Cadastrar Usuario");
+        sMenuCadastroUsuario.setText("Usuario");
         sMenuCadastroUsuario.setPreferredSize(new java.awt.Dimension(140, 60));
         sMenuCadastroUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,12 +331,17 @@ int a=0;
         });
         menuCadastro.add(sMenuCadastroUsuario);
 
-        sMenuCadastrarMesa.setText("Cadastrar Mesa");
+        sMenuCadastrarMesa.setText("Mesa");
         sMenuCadastrarMesa.setPreferredSize(new java.awt.Dimension(140, 60));
         menuCadastro.add(sMenuCadastrarMesa);
 
         sMenuCardapio.setText("Cardapio");
         sMenuCardapio.setPreferredSize(new java.awt.Dimension(140, 60));
+        sMenuCardapio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sMenuCardapioActionPerformed(evt);
+            }
+        });
         menuCadastro.add(sMenuCardapio);
 
         jMenuBar1.add(menuCadastro);
@@ -489,7 +494,7 @@ int a=0;
     
     private void bt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt1ActionPerformed
         
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         
         opcoes.setVisible(true);
        // JOptionPane.showMessageDialog(null, "Mesa reservada!");
@@ -506,7 +511,7 @@ int a=0;
     private void bt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt2ActionPerformed
         
         
-        opcoesMesa opcoes = new opcoesMesa();      
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();      
        
         if(a == 0) {
             opcoes.setVisible(true);
@@ -523,169 +528,169 @@ int a=0;
     }//GEN-LAST:event_sMenuAcompanharEstoqueActionPerformed
 
     private void bt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt3ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt3.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt3ActionPerformed
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt4.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt4ActionPerformed
 
     private void bt5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt5ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt5.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt5ActionPerformed
 
     private void bt6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt6ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt6.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt6ActionPerformed
 
     private void bt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt7ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt7.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt7ActionPerformed
 
     private void bt8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt8ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt8.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt8ActionPerformed
 
     private void bt9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt9ActionPerformed
-       opcoesMesa opcoes = new opcoesMesa();
+       TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt9.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt9ActionPerformed
 
     private void bt10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt10ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt10.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt10ActionPerformed
 
     private void bt11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt11ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt11.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt11ActionPerformed
 
     private void bt12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt12ActionPerformed
-         opcoesMesa opcoes = new opcoesMesa();
+         TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt12.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt12ActionPerformed
 
     private void bt13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt13ActionPerformed
-         opcoesMesa opcoes = new opcoesMesa();
+         TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt13.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt13ActionPerformed
 
     private void bt14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt14ActionPerformed
-         opcoesMesa opcoes = new opcoesMesa();
+         TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt14.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt14ActionPerformed
 
     private void bt15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt15ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt15.setBackground(new Color(255,0,0));       
     }//GEN-LAST:event_bt15ActionPerformed
 
     private void bt16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt16ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt16.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt16ActionPerformed
 
     private void bt17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt17ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt17.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt17ActionPerformed
 
     private void bt18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt18ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt18.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt18ActionPerformed
 
     private void bt19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt19ActionPerformed
-       opcoesMesa opcoes = new opcoesMesa();
+       TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt19.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt19ActionPerformed
 
     private void bt20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt20ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt20.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt20ActionPerformed
 
     private void bt21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt21ActionPerformed
-       opcoesMesa opcoes = new opcoesMesa();
+       TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt21.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt21ActionPerformed
 
     private void bt22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt22ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt22.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt22ActionPerformed
 
     private void bt23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt23ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt23.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt23ActionPerformed
 
     private void bt24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt24ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt24.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt24ActionPerformed
 
     private void bt25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt25ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt25.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt25ActionPerformed
 
     private void bt26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt26ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt26.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt26ActionPerformed
 
     private void bt27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt27ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt27.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt27ActionPerformed
 
     private void bt28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt28ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt28.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt28ActionPerformed
 
     private void bt29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt29ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt29.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt29ActionPerformed
 
     private void bt30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt30ActionPerformed
-        opcoesMesa opcoes = new opcoesMesa();
+        TelaOpcoesMesa opcoes = new TelaOpcoesMesa();
         opcoes.setVisible(true);
         bt30.setBackground(new Color(255,0,0));
     }//GEN-LAST:event_bt30ActionPerformed
@@ -694,6 +699,11 @@ int a=0;
        TelaUsuarios telaUsu = new TelaUsuarios();
        telaUsu.setVisible(true);
     }//GEN-LAST:event_sMenuCadastroUsuarioActionPerformed
+
+    private void sMenuCardapioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sMenuCardapioActionPerformed
+        TelaCardapio telaUsu = new TelaCardapio();
+        telaUsu.setVisible(true);
+    }//GEN-LAST:event_sMenuCardapioActionPerformed
 
     /**
      * @param args the command line arguments

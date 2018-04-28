@@ -97,12 +97,13 @@ public class UsuariosDAO {
             stmt = con.prepareStatement(sql);
             stmt.setInt(1, usuarios.getMatricula());
             stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso! ");
             return true;
                     } catch (SQLException ex) {
-            System.err.println("Erro: "+ex);
+            System.err.println("Erro ao excluir. Erro: "+ex);
             return false;
         }finally{
-            ConnectionFactory.closeConnection(con, stmt);
+            //ConnectionFactory.closeConnection(con, stmt);
         }
     }
         
