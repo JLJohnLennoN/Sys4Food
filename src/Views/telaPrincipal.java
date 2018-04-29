@@ -1,15 +1,23 @@
 package Views;
 
+import classes.ConnectionFactory;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import java.sql.*;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.view.JasperViewer;
 
 
 public class telaPrincipal extends javax.swing.JFrame {
-int a=0;
+    Connection conexao = null;
+    int a=0;
+
 
     public telaPrincipal() {
         initComponents();
+        conexao = ConnectionFactory.getConnection();
     }
 
     @SuppressWarnings("unchecked")
@@ -55,7 +63,8 @@ int a=0;
         menuEstoque = new javax.swing.JMenu();
         sMenuCadastrarProdudo = new javax.swing.JMenuItem();
         sMenuAcompanharEstoque = new javax.swing.JMenuItem();
-        menuRelatorios = new javax.swing.JMenu();
+        sMenuRelatorioFuncionarios = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -364,9 +373,19 @@ int a=0;
 
         jMenuBar1.add(menuEstoque);
 
-        menuRelatorios.setText("Relatorios");
-        menuRelatorios.setPreferredSize(new java.awt.Dimension(90, 60));
-        jMenuBar1.add(menuRelatorios);
+        sMenuRelatorioFuncionarios.setText("Relatorios");
+        sMenuRelatorioFuncionarios.setPreferredSize(new java.awt.Dimension(90, 60));
+
+        jMenuItem2.setText("Funciunários");
+        jMenuItem2.setPreferredSize(new java.awt.Dimension(140, 60));
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        sMenuRelatorioFuncionarios.add(jMenuItem2);
+
+        jMenuBar1.add(sMenuRelatorioFuncionarios);
 
         setJMenuBar(jMenuBar1);
 
@@ -705,6 +724,19 @@ int a=0;
         telaUsu.setVisible(true);
     }//GEN-LAST:event_sMenuCardapioActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        int confirma = JOptionPane.showConfirmDialog(null,"Deseja imprimir esse relatorio?", 
+                "Atenção", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION){
+            try {
+                JasperPrint print = JasperFillManager.fillReport("C:/rptDesign/rpt_usuarios.jasper",null, conexao);
+                JasperViewer.viewReport(print, false);
+            } catch (Exception e) {
+                JOptionPane.showConfirmDialog(null, e);
+            }
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -773,14 +805,15 @@ int a=0;
     private javax.swing.JButton bt9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu menuCadastro;
     private javax.swing.JMenu menuEstoque;
-    private javax.swing.JMenu menuRelatorios;
     private javax.swing.JMenuItem sMenuAcompanharEstoque;
     private javax.swing.JMenuItem sMenuCadastrarMesa;
     private javax.swing.JMenuItem sMenuCadastrarProdudo;
     private javax.swing.JMenuItem sMenuCadastroUsuario;
     private javax.swing.JMenuItem sMenuCardapio;
+    private javax.swing.JMenu sMenuRelatorioFuncionarios;
     // End of variables declaration//GEN-END:variables
 
 }
