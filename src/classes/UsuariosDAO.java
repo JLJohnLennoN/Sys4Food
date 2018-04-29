@@ -39,7 +39,9 @@ public class UsuariosDAO {
             System.err.println("Erro: "+ex);
             return false;
         }finally{
-            ConnectionFactory.closeConnection(con, stmt);
+            //ConnectionFactory.closeConnection(con, stmt);
+            
+            
         }
     }
     
@@ -66,6 +68,7 @@ public class UsuariosDAO {
             System.err.println("Erro: Usuário não cadastrado!"+ex);
         }finally{
             //ConnectionFactory.closeConnection(con, stmt, rs);
+           
         }
         
         return usuarios;
@@ -87,7 +90,8 @@ public class UsuariosDAO {
             System.err.println("Erro: "+ex);
             return false;
         }finally{
-           // ConnectionFactory.closeConnection(con, stmt);
+           //ConnectionFactory.closeConnection(con, stmt);
+           
         }
     }
         public boolean delete (Usuarios usuarios){
@@ -103,7 +107,8 @@ public class UsuariosDAO {
             System.err.println("Erro ao excluir. Erro: "+ex);
             return false;
         }finally{
-            //ConnectionFactory.closeConnection(con, stmt);
+           //ConnectionFactory.closeConnection(con, stmt);
+          
         }
     }
         

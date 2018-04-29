@@ -114,7 +114,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
         txtConfimarSenha.setEnabled(false);
 
-        comboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Vendedor" }));
+        comboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Administrador", "Vendedor" }));
         comboBoxTipo.setEnabled(false);
         comboBoxTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,10 +220,10 @@ public class TelaUsuarios extends javax.swing.JFrame {
                         .addComponent(btAlterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btExcluir)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 620, 283);
+        setBounds(0, 0, 620, 349);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
@@ -250,6 +250,8 @@ public class TelaUsuarios extends javax.swing.JFrame {
        btSalvar.setEnabled(true);
        txtBuscar.setEnabled(false);
        btBuscar.setEnabled(false);
+       btAlterar.setEnabled(false);
+       btExcluir.setEnabled(false);
     }//GEN-LAST:event_btNovoActionPerformed
 
     private void btSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarActionPerformed
@@ -263,8 +265,9 @@ public class TelaUsuarios extends javax.swing.JFrame {
         }else if(txtSenha.getText().isEmpty()){
             JOptionPane.showMessageDialog(null, "Preencha o campo Senha para continuar");
             txtSenha.requestFocus();
-        }else
+        }else if(txtSenha.getText().equals(txtConfimarSenha.getText())){
             if (flag==1){
+                
             usuario.setNome(txtUsuario.getText());
             usuario.setTipo((String)comboBoxTipo.getSelectedItem());
             usuario.setSenha(txtSenha.getText());
@@ -278,6 +281,8 @@ public class TelaUsuarios extends javax.swing.JFrame {
             txtConfimarSenha.setEnabled(false);
             comboBoxTipo.setEnabled(false);
             btSalvar.setEnabled(false);
+            txtBuscar.setEnabled(true);
+            btBuscar.setEnabled(true);
         }else{
             usuario.setNome(txtUsuario.getText());
             usuario.setTipo((String)comboBoxTipo.getSelectedItem());
@@ -293,7 +298,8 @@ public class TelaUsuarios extends javax.swing.JFrame {
             comboBoxTipo.setEnabled(false);
             btSalvar.setEnabled(false);
             }
-        
+        }else
+            JOptionPane.showMessageDialog(null, "As senha não correspondem");
     }//GEN-LAST:event_btSalvarActionPerformed
 
     private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
@@ -324,6 +330,12 @@ public class TelaUsuarios extends javax.swing.JFrame {
       if (resposta == JOptionPane.YES_OPTION){
           usuario.setMatricula(Integer.parseInt(txtMatricula.getText()));
           dao.delete(usuario);
+            txtUsuario.setText("");
+            txtSenha.setText("");
+            txtConfimarSenha.setText("");
+            txtMatricula.setText("");
+            txtBuscar.setText("");
+            comboBoxTipo.setToolTipText("Selecione");
       }
     }//GEN-LAST:event_btExcluirActionPerformed
 
